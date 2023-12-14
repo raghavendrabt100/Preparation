@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+ @import url("../node_modules/bootstrap/dist/css/bootstrap.css"); 
+ 
+ body{
+    font-family:'Ubuntu',sans-sirf;
+    margin:0;
+    height:100vh;
+ }

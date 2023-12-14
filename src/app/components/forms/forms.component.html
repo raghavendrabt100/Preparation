@@ -1,0 +1,32 @@
+<div class="container bg-primary mt-5">
+    <div class="row">
+        <div class="col-md-4">
+        <form [formGroup]="registationForm" (ngSubmit)="submitData()">
+            <div class="card-header bg-primary">
+              <h3 class="bg-primary text-red">Registration Form</h3>
+            </div>
+            <div class="card-body">
+         <div>
+               <label for="name">Name:</label>
+               <input type="text" formControlName="name" class="form-control">
+           
+            <div *ngIf="name.invalid && name.touched">
+               <span class="red" *ngIf="name.errors?.required">Invalid Name Enterd</span>
+               <span  class="yellow" *ngIf="name.errors?.pattern"> Enter only Character</span>
+               <span  class="blue" *ngIf="name.errors?.maxLength"> Max 10 charater Allowed</span>
+            </div>
+         </div>
+            <div>
+                <label for="email">Emai:</label>
+                <input type="email" formControlName="email" class="form-control">
+             </div>
+             <div>
+                <label for="password">Password:</label>
+                <input type="password" formControlName="password" class="form-control">
+             </div>
+             <button class="btn btn-danger" mt-2>LOGIN</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

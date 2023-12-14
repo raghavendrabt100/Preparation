@@ -1,0 +1,37 @@
+
+<div>{{dob | date:'short' | lowercase }}</div>
+<div>{{time}}</div>
+<div>{{age | custom}} Years</div>
+<button (click)="getProducts()" class="bg-primary">All Products</button>
+<button routerLink="/" class="bg-primary ml-auto">Back</button>
+
+<div class="container-fluid">
+    
+    <table  class="table table-hover table-striped text-center" >
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>DESCRIPTION</th>
+                <th>CATOGERY</th>
+                <th>IMAGE</th>
+                <th>RATING</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+             <td> <a [routerLink]="['/product',product.id]" class="text-danger">{{product.id}}</a></td>
+             <td> 
+                  {{product.title.substr(product.title.length-5)}}
+            </td>
+           
+             <td>{{product.price}}</td>
+             <td>{{product.description}}</td>
+             <td>{{product.category}}</td>
+             <td><img [src]="product.image" alt="" width="150" height="70"></td>
+             <td>{{product.rating.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
